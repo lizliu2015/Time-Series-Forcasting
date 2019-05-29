@@ -16,6 +16,7 @@ sun = data[,14]       #hour
 
 X = cbind(cloud, temp, sun)
 X
+
 # PCA dimensionality reduction
 library(stats)
 X.pca <- prcomp(X, scale. = TRUE, rank.=1, retx=True)
