@@ -8,8 +8,6 @@ head(data,5)
 sales = data[,3]/1000000		# millions in xyz currency
 temp = data[,11]				# centigrade
 
-
-
 ##### Representing Data as Time Series Objects #####
 
 yy = ts(sales, frequency = 52,start = c(2015,1)) # coverts sales data as time series object with start date and weekly frequency
@@ -17,8 +15,6 @@ plot.ts(yy)									# ALWAYS plot time series to see patterns: trend, cycle, var
 
 xx = ts(temp, frequency = 52, start = c(2015,1))
 plot.ts(xx)
-
-
 
 ##### Moving Average #####
 
@@ -28,7 +24,6 @@ yy13 = SMA(yy,13)		# 13 week (quarterly) moving average
 yy52 = SMA(yy,52)		# annual moving average
 
 plot.ts(cbind(yy,yy4,yy13,yy52))		# understand the "smoothing" concept due to the averaging operation
-
 
 ##### Time Series Decomposition  #####
 
@@ -46,8 +41,6 @@ xd.trend = xd$trend
 xd.seasonal = xd$seasonal
 xd.random = xd$random
 plot.ts(cbind(xx,xd.trend, xd.seasonal, xd.random))
-
-
 
 ##### Simple Exponential Smoothing #####
 
